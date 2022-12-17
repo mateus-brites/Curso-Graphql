@@ -1,3 +1,3 @@
 type Mutation {
-    novoUsuario(nome: String, idade: Int, email: String): Usuario!
+    novoUsuario(nome: String, idade: Int, email: String ): Usuario!
 }
