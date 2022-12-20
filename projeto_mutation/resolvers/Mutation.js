@@ -25,5 +25,27 @@ module.exports = {
         const deletado = usuarios.splice(index, 1)
 
         return deletado[0]
+    },
+
+    alterarUsuario(_,{id, nome, email, idade} ) {
+        const indice = usuarios.findIndex(usuario => usuario.id === id);
+
+        if(indice< 0) {
+            return
+        }
+
+        if(nome) {
+            usuarios[indice].nome = nome
+        }
+
+        if(email) {
+            usuarios[indice].email = email
+        }
+
+        if(idade) {
+            usuarios[indice].idade = idade
+        }
+
+        return usuarios[indice]
     }
 }
