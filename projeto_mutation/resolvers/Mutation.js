@@ -19,16 +19,29 @@ module.exports = {
     excluirUsuario(_, {filtro}) {
         const { id, email } = filtro
 
-        console.log({ id })
-        index = usuarios.findIndex(usuario => usuario.id === id)
-        console.log(index, usuarios)
-        if(index < 0) {
-            return null
+        if(id) {
+            index = usuarios.findIndex(usuario => usuario.id === id)
+            if(index < 0) {
+                return null
+            }
+    
+            const deletado = usuarios.splice(index, 1)
+    
+            return deletado[0]
+
+        } else if(email) {
+            index = usuarios.findIndex(usuario => usuario.email === email)
+            if(index < 0) {
+                return null
+            }
+    
+            const deletado = usuarios.splice(index, 1)
+    
+            return deletado[0]
         }
 
-        const deletado = usuarios.splice(index, 1)
+        return null
 
-        return deletado[0]
     },
 
     alterarUsuario(_,{id, nome, email, idade} ) {

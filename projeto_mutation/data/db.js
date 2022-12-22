@@ -12,21 +12,21 @@ const perfis = [
 const usuarios = [{
     id: nextId(),
     nome: 'João Silva',
-    email: 'jsilva@zemail.com',
+    email: 'jsilva@gmail.com',
     idade: 29,
     perfil_id: 1,
     status: 'ATIVO'
 }, {
     id: nextId(),
     nome: 'Rafael Junior',
-    email: 'rafajun@wemail.com',
+    email: 'rafajun@gmail.com',
     idade: 31,
     perfil_id: 2,
     status: 'INATIVO'
 }, {
     id: nextId(),
     nome: 'Daniela Smith',
-    email: 'danismi@umail.com',
+    email: 'danismi@gmail.com',
     idade: 24,
     perfil_id: 1,
     status: 'BLOQUEADO'
