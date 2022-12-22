@@ -1,7 +1,8 @@
 const { usuarios, nextId } = require('../data/db')
 
 module.exports = {
-    novoUsuario(_, {nome, email, idade}) {
+    novoUsuario(_, { dados }) {
+        const {nome, email, idade} = dados
         const novo = {
             id: nextId(),
             nome,
@@ -15,10 +16,13 @@ module.exports = {
         return novo
     },
 
-    excluirUsuario(_, {id}) {
+    excluirUsuario(_, {filtro}) {
+        const { id, email } = filtro
+
+        console.log({ id })
         index = usuarios.findIndex(usuario => usuario.id === id)
         console.log(index, usuarios)
-        if(index < 1) {
+        if(index < 0) {
             return null
         }
 
