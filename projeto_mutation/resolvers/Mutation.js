@@ -44,7 +44,12 @@ module.exports = {
 
     },
 
-    alterarUsuario(_,{id, nome, email, idade} ) {
+    alterarUsuario(_,{filtro, dados} ) {
+
+        const { id } = filtro
+
+        const {nome, email, idade} = dados
+
         const indice = usuarios.findIndex(usuario => usuario.id === id);
 
         if(indice< 0) {
